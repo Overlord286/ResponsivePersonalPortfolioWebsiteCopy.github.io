@@ -111,10 +111,6 @@ section {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
-    /*background-image: linear-gradient(var(--main-color));
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-position: -15rem 0;*/
 }
 
 .home-content p {
@@ -501,6 +497,121 @@ span {
     width: 30%;
 }
 
+/* Projects section design */
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10rem 9%;
+    background: var(--bg-color);
+}
+
+.portfolio h2.heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.portfolio-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    /* Adjust the width as needed */
+    height: 200px;
+    /* Adjust the height as needed */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-item .overlay a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: 2px solid var(--main-color);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-item .overlay a:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* Add this CSS code at the end of your existing CSS file */
+
+.resume {
+    padding: 10rem 9% 2rem;
+    text-align: center;
+    background: var(--second-bg-color);
+}
+
+.resume .heading {
+    color: var(--main-color);
+    margin-bottom: 3rem;
+}
+
+.resume-content {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.resume-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.resume-content .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.resume-content .btn:hover {
+    background: var(--bg-color);
+    color: var(--main-color);
+}
+
 .text-over {
     color: wheat;
     border: 2px solid;
@@ -700,7 +811,7 @@ span {
         left: -100%;
         width: 100%;
         padding: 1rem 4%;
-        background: var(--main-color);
+        background: var(--bg-color);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         z-index: 1;
         transition: .25s ease;
@@ -733,14 +844,14 @@ span {
     .navbar a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
+        margin: 2rem 0;
         transform: translateX(-20rem);
-        transition: .25s ease;
-        transition-delay: 0s;
+        transition: transform 0.25s ease, margin 0.25s ease;
     }
 
     .navbar.active a {
         transform: translateX(0);
+        margin: 1rem 0;
         transition-delay: .25s;
     }
 
@@ -759,15 +870,16 @@ span {
     .home-content h1 {
         display: flex;
         flex-direction: column;
+        font-size: 4rem;
     }
 
     .home-sci {
-        width: 160px;
+        width: 120px;
     }
 
     .home-sci a {
-        width: 38px;
-        height: 38px;
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -807,6 +919,10 @@ span {
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 3.8rem;
+    }
+
+    .education {
+        padding: 10rem 4% 3rem 5%;
     }
 }
